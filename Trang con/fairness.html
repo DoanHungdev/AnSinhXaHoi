@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An Sinh & Công Bằng | An Sinh 360 - Việt Nam</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    const savedTheme = localStorage.getItem('as360_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <!-- Aurora Background -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-4"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="../index.html" class="nav-brand">
+        <span>AN SINH 360</span>
+        <span class="nav-brand-tag">GDKT&PL 12</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="map.html" class="nav-link">Bản đồ</a></li>
+        <li><a href="numbers.html" class="nav-link">Con số</a></li>
+        <li><a href="lan.html" class="nav-link">Lan</a></li>
+        <li><a href="people.html" class="nav-link">Đối tượng</a></li>
+        <li><a href="fairness.html" class="nav-link active">Công bằng</a></li>
+        <li><a href="game.html" class="nav-link">Mô phỏng</a></li>
+        <li><a href="sources.html" class="nav-link">Nguồn</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">☀️</button>
+        <button class="mobile-toggle-btn" aria-label="Mở menu điều hướng">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="map.html" class="nav-link">Bản đồ</a>
+      <a href="numbers.html" class="nav-link">Con số</a>
+      <a href="lan.html" class="nav-link">Lan</a>
+      <a href="people.html" class="nav-link">Đối tượng</a>
+      <a href="fairness.html" class="nav-link active">Công bằng</a>
+      <a href="game.html" class="nav-link">Mô phỏng</a>
+      <a href="sources.html" class="nav-link">Nguồn</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="back-btn-container">
+      <button class="back-button" onclick="goBack()" aria-label="Quay lại trang trước">
+        ← Quay lại
+      </button>
+    </div>
+
+    <div class="section-badge">Section 5: Phân Phối Lại Thu Nhập</div>
+    <h1 class="section-title">AN SINH & CÔNG BẰNG XÃ HỘI</h1>
+    <p class="section-subtitle">
+      Khám phá chức năng điều tiết của Nhà nước: Kéo thanh trượt để trải nghiệm cách mạng lưới an sinh xã hội bù đắp rủi ro cho người nông dân bị thiên tai bão lũ, thu hẹp khoảng cách giàu nghèo bền vững.
+    </p>
+
+    <!-- Dynamic Slider Control Box -->
+    <div class="dynamic-frame slider-control-box">
+      <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--accent-cyan); letter-spacing: 0.08em; margin-bottom: 6px;">
+        Thanh Điều Tiết Chính Sách
+      </div>
+      <h2 style="font-size: 1.35rem; font-weight: 900; margin-bottom: 8px;">
+        Mức Hỗ Trợ Của Nhà Nước: <span id="support-val" style="color: var(--accent-cyan);">50%</span>
+      </h2>
+      <div style="font-size: 0.85rem; color: var(--text-secondary);">
+        Khoảng cách chênh lệch đời sống: <strong id="gap-score" style="color: var(--accent-rose);">45%</strong>
+      </div>
+
+      <input type="range" min="0" max="100" value="50" class="slider-input" id="support-slider" aria-label="Mức hỗ trợ của Nhà nước" />
+
+      <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">
+        <span>0% (Thị trường tự do, không can thiệp)</span>
+        <span style="color: var(--accent-teal);">50% (Hỗ trợ tiêu chuẩn)</span>
+        <span>100% (Bảo trợ toàn diện & Cứu trợ khẩn cấp)</span>
+      </div>
+    </div>
+
+    <!-- Split Screen Comparison with Dynamic Frames -->
+    <div class="fairness-split-grid">
+      <!-- Person A: Office Worker -->
+      <div class="dynamic-frame person-card" id="person-a-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 0.725rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: rgba(99, 102, 241, 0.15); color: var(--accent-indigo); border: 1px solid rgba(99, 102, 241, 0.3);">
+            Nhóm 1: Thu Nhập Ổn Định
+          </span>
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-teal);">Đóng thuế & BHXH</span>
+        </div>
+
+        <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 6px;">
+          Chị Mai: Chuyên Viên Văn Phòng (Hà Nội)
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">
+          Làm việc trong môi trường công sở hiện đại, thu nhập đều đặn, tích lũy tài chính ổn định và đóng đầy đủ 5 chế độ BHXH bắt buộc.
+        </p>
+
+        <div class="person-img-box">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Mercedes-Benz-Vietnam_factory_workers_management.jpg" alt="Người lao động tại Việt Nam đóng bảo hiểm xã hội đầy đủ" />
+        </div>
+
+        <div style="padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.05); font-size: 0.825rem; line-height: 1.5; color: var(--text-secondary); margin-top: auto;">
+          <strong>Trạng thái:</strong> Thu nhập an toàn. Khi hệ thống an sinh xã hội bao phủ tốt, Chị Mai được sống trong một xã hội văn minh, an toàn, không có bất ổn và tội phạm xuất phát từ bần cùng hóa.
+        </div>
+      </div>
+
+      <!-- Person B: Farmer Hit by Storm -->
+      <div class="dynamic-frame person-card" id="person-b-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 0.725rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: rgba(244, 63, 94, 0.15); color: var(--accent-rose); border: 1px solid rgba(244, 63, 94, 0.3);">
+            Nhóm 2: Bị Rủi Ro Thiên Tai
+          </span>
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan);">Thụ hưởng chính sách</span>
+        </div>
+
+        <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 6px;">
+          Bác Ba: Nông Dân Bị Thiệt Hại Bão Lũ (Miền Trung)
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">
+          Trải qua cơn bão lịch sử càn quét, hoa màu ngập úng, chuồng trại hư hại nặng nề, cần sự hỗ trợ của Nhà nước để không rơi vào bẫy nghèo.
+        </p>
+
+        <div class="person-img-box">
+          <img id="person-b-img" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Rice_Farmer_in_Hoi_An%2C_Vietnam.jpg" alt="Bác nông dân Việt Nam kiên cường vượt qua rủi ro thiên tai" />
+        </div>
+
+        <div id="person-b-status" style="padding: 12px; border-radius: 12px; background: rgba(255,255,255,0.05); font-size: 0.825rem; line-height: 1.5; margin-top: auto;">
+          <!-- JS dynamic status -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Message Banner -->
+    <div class="dynamic-frame fairness-quote-banner">
+      "Công bằng xã hội không phải là cào bằng (chia đều), mà là bù đắp rủi ro để ai cũng có cơ hội phát triển."
+    </div>
+
+    <div style="text-align: center; margin-top: 16px;">
+      <a href="sources.html" class="source-badge-link">
+        Tra cứu số liệu & Cơ sở pháp lý về Phân phối lại thu nhập ↗
+      </a>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Dự án thực hiện bởi: <strong>Tổ 2 - Lớp 12D6 - THPT Đông Anh</strong> | Liên hệ: <strong>012345678</strong> | Địa chỉ: <strong>Đông Anh, Hà Nội.</strong>
+      <div style="font-size: 0.725rem; color: var(--color-accent); margin-top: 6px;">
+        Nguồn dữ liệu được truy cập và cập nhật: Tháng 10/2026 (theo các văn bản pháp luật và niên giám thống kê chính thức của Nhà nước Việt Nam).
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/fairness.js"></script>
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>

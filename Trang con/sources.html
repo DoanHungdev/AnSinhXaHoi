@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguồn Dữ Liệu Chính Thức | An Sinh 360 - Việt Nam</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    const savedTheme = localStorage.getItem('as360_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <!-- Aurora Background (Dịu Mắt) -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="../index.html" class="nav-brand">
+        <span>AN SINH 360</span>
+        <span class="nav-brand-tag">GDKT&PL 12</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="map.html" class="nav-link">Bản đồ</a></li>
+        <li><a href="numbers.html" class="nav-link">Con số</a></li>
+        <li><a href="lan.html" class="nav-link">Lan</a></li>
+        <li><a href="people.html" class="nav-link">Đối tượng</a></li>
+        <li><a href="fairness.html" class="nav-link">Công bằng</a></li>
+        <li><a href="game.html" class="nav-link">Mô phỏng</a></li>
+        <li><a href="sources.html" class="nav-link active">Nguồn</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">☀️</button>
+        <button class="mobile-toggle-btn" aria-label="Mở menu điều hướng">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="map.html" class="nav-link">Bản đồ</a>
+      <a href="numbers.html" class="nav-link">Con số</a>
+      <a href="lan.html" class="nav-link">Lan</a>
+      <a href="people.html" class="nav-link">Đối tượng</a>
+      <a href="fairness.html" class="nav-link">Công bằng</a>
+      <a href="game.html" class="nav-link">Mô phỏng</a>
+      <a href="sources.html" class="nav-link active">Nguồn</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="back-btn-container">
+      <button class="back-button" onclick="goBack()" aria-label="Quay lại trang trước">
+        ← Quay lại
+      </button>
+    </div>
+
+    <div class="section-badge">Minh Bạch & Pháp Lý</div>
+    <h1 class="section-title">DANH MỤC NGUỒN DỮ LIỆU CHÍNH THỨC</h1>
+    <p class="section-subtitle">
+      Tuân thủ nguyên tắc tính xác thực trong môn Giáo dục Kinh tế và Pháp luật lớp 12: Mọi chỉ tiêu thống kê, số liệu và văn bản chính sách trong website "An Sinh 360 - Việt Nam" đều được trích dẫn trực tiếp từ các cơ quan Nhà nước có thẩm quyền.
+    </p>
+
+    <!-- Sources Grid -->
+    <div class="sources-grid">
+      <!-- 1. BHXH Việt Nam -->
+      <div class="dynamic-frame source-item-card">
+        <div>
+          <div class="source-org-badge">Cơ Quan Bảo Hiểm Quốc Gia</div>
+          <h2 class="source-title">Bảo Hiểm Xã Hội Việt Nam</h2>
+          <p class="source-desc">
+            <strong>Dữ liệu trích dẫn:</strong> Số liệu toàn quốc năm 2024: 95,523 triệu người tham gia BHYT (tỷ lệ bao phủ 94,2% dân số); 20,11 triệu người tham gia BHXH (khoảng 42,71% lực lượng lao động trong độ tuổi); 16,093 triệu người tham gia BHTN (~34,18% lực lượng lao động).
+          </p>
+        </div>
+        <div>
+          <a href="https://baohiemxahoi.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Truy cập Cổng TTĐT BHXH Việt Nam ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Cục Thống Kê / Tổng cục Thống kê -->
+      <div class="dynamic-frame source-item-card">
+        <div>
+          <div class="source-org-badge">Thống Kê Quốc Gia</div>
+          <h2 class="source-title">Cục Thống Kê / Tổng Cục Thống Kê (GSO)</h2>
+          <p class="source-desc">
+            <strong>Dữ liệu trích dẫn:</strong> Dân số Việt Nam tại thời điểm 01/04/2024 là 101.112.656 người; Lực lượng lao động từ 15 tuổi trở lên đạt khoảng 53,0 triệu người; Tỷ lệ thất nghiệp trong độ tuổi lao động năm 2024 là 2,24%; Niên giám thống kê xã hội.
+          </p>
+        </div>
+        <div>
+          <a href="https://www.gso.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Truy cập Cổng TTĐT Tổng cục Thống kê ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Quốc hội Việt Nam -->
+      <div class="dynamic-frame source-item-card">
+        <div>
+          <div class="source-org-badge">Cơ Quan Quyền Lực Nhà Nước Cao Nhất</div>
+          <h2 class="source-title">Quốc Hội Nước CHXHCN Việt Nam</h2>
+          <p class="source-desc">
+            <strong>Văn bản pháp luật:</strong> Nghị quyết số 202/2025/QH15 về sắp xếp đơn vị hành chính cấp tỉnh từ ngày 01/07/2025 (Việt Nam có 34 đơn vị hành chính cấp tỉnh gồm 28 tỉnh và 6 thành phố); Luật Bảo hiểm xã hội; Luật Bảo hiểm y tế; Luật Việc làm.
+          </p>
+        </div>
+        <div>
+          <a href="https://quochoi.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Truy cập Cổng TTĐT Quốc hội Việt Nam ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Cổng TTĐT Chính phủ -->
+      <div class="dynamic-frame source-item-card">
+        <div>
+          <div class="source-org-badge">Cơ Quan Hành Chính Nhà Nước Cao Nhất</div>
+          <h2 class="source-title">Cổng Thông Tin Điện Tử Chính Phủ</h2>
+          <p class="source-desc">
+            <strong>Văn bản điều hành:</strong> Quyết định số 19/2025/QĐ-TTg của Thủ tướng Chính phủ; Nghị định số 76/2024/NĐ-CP (áp dụng từ 01/07/2024) nâng mức chuẩn trợ cấp xã hội lên 500.000 đồng/tháng; Nghị định số 07/2021/NĐ-CP quy định chuẩn nghèo đa chiều 2022-2025.
+          </p>
+        </div>
+        <div>
+          <a href="https://chinhphu.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Truy cập Báo Điện tử Chính phủ ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Bộ Lao động - Thương binh và Xã hội -->
+      <div class="dynamic-frame source-item-card">
+        <div>
+          <div class="source-org-badge">Quản Lý Nhà Nước Về An Sinh</div>
+          <h2 class="source-title">Bộ Lao Động - Thương Binh & Xã Hội</h2>
+          <p class="source-desc">
+            <strong>Dữ liệu trích dẫn:</strong> Báo cáo chính sách giảm nghèo bền vững, công tác bảo trợ xã hội cho người cao tuổi, người khuyết tật, chính sách bảo hiểm thất nghiệp và hỗ trợ đào tạo nghề cho người lao động mất việc.
+          </p>
+        </div>
+        <div>
+          <a href="https://molisa.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Truy cập Cổng TTĐT Bộ LĐ-TB&XH ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Bộ Y tế -->
+      <div class="dynamic-frame source-item-card">
+        <div>
+          <div class="source-org-badge">Chăm Sóc Sức Khỏe Nhân Dân</div>
+          <h2 class="source-title">Bộ Y Tế</h2>
+          <p class="source-desc">
+            <strong>Dữ liệu trích dẫn:</strong> Quyết định và Thông tư hướng dẫn thi hành BHYT khám chữa bệnh tuyến cơ sở, chương trình Tiêm chủng mở rộng quốc gia miễn phí cho trẻ em dưới 6 tuổi và thanh toán BHYT qua căn cước công dân gắn chip.
+          </p>
+        </div>
+        <div>
+          <a href="https://moh.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Truy cập Cổng TTĐT Bộ Y tế ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Methodology & Timeline Note -->
+    <div class="dynamic-frame" style="margin-top: 36px; padding: 24px; border-color: rgba(200, 169, 107, 0.4);">
+      <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--color-accent); margin-bottom: 8px;">
+        📌 Ghi chú phương pháp luận và phân định ranh giới số liệu:
+      </h3>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65;">
+        • <strong>Đơn vị hành chính:</strong> Từ ngày 01/07/2025, Việt Nam chính thức vận hành <strong>34 đơn vị hành chính cấp tỉnh</strong> (gồm 28 tỉnh và 6 thành phố trực thuộc Trung ương) theo Nghị quyết số 202/2025/QH15. Hệ thống 63 tỉnh/thành phố trước đây được lưu giữ và sử dụng trong các bảng so sánh chuỗi thời gian lịch sử (2015 - 2024).
+        <br />
+        • <strong>Quy tắc địa bàn:</strong> Các số liệu về BHYT (94,2%), BHXH (42,71%), BHTN (34,18%) và Thất nghiệp (2,24%) được công bố trên website là <strong>số liệu phạm vi toàn quốc năm 2024</strong>; không được quy gán tùy tiện làm số liệu riêng của một địa phương cụ thể.
+      </p>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Dự án thực hiện bởi: <strong>Tổ 2 - Lớp 12D6 - THPT Đông Anh</strong> | Liên hệ: <strong>012345678</strong> | Địa chỉ: <strong>Đông Anh, Hà Nội.</strong>
+      <div style="font-size: 0.725rem; color: var(--color-accent); margin-top: 6px;">
+        Nguồn dữ liệu được truy cập và cập nhật: Tháng 10/2026 (theo các văn bản pháp luật và niên giám thống kê chính thức của Nhà nước Việt Nam).
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An Sinh Qua Những Con Số | An Sinh 360 - Việt Nam</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    const savedTheme = localStorage.getItem('as360_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <!-- Aurora Background (Dịu Mắt) -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+    <div class="aurora-blob aurora-4"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="../index.html" class="nav-brand">
+        <span>AN SINH 360</span>
+        <span class="nav-brand-tag">GDKT&PL 12</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="map.html" class="nav-link">Bản đồ</a></li>
+        <li><a href="numbers.html" class="nav-link active">Con số</a></li>
+        <li><a href="lan.html" class="nav-link">Lan</a></li>
+        <li><a href="people.html" class="nav-link">Đối tượng</a></li>
+        <li><a href="fairness.html" class="nav-link">Công bằng</a></li>
+        <li><a href="game.html" class="nav-link">Mô phỏng</a></li>
+        <li><a href="sources.html" class="nav-link">Nguồn</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">☀️</button>
+        <button class="mobile-toggle-btn" aria-label="Mở menu điều hướng">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="map.html" class="nav-link">Bản đồ</a>
+      <a href="numbers.html" class="nav-link active">Con số</a>
+      <a href="lan.html" class="nav-link">Lan</a>
+      <a href="people.html" class="nav-link">Đối tượng</a>
+      <a href="fairness.html" class="nav-link">Công bằng</a>
+      <a href="game.html" class="nav-link">Mô phỏng</a>
+      <a href="sources.html" class="nav-link">Nguồn</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="back-btn-container">
+      <button class="back-button" onclick="goBack()" aria-label="Quay lại trang trước">
+        ← Quay lại
+      </button>
+    </div>
+
+    <div class="section-badge">Section 2: Data Storytelling</div>
+    <h1 class="section-title">AN SINH XÃ HỘI QUA NHỮNG CON SỐ BIẾT NÓI</h1>
+    <p class="section-subtitle">
+      Không có định nghĩa khô khan. Hãy lắng nghe câu chuyện về sức sống của chính sách an sinh xã hội tại Việt Nam qua những dấu mốc khổng lồ đã được kiểm chứng từ nguồn chính thức của Bảo hiểm Xã hội Việt Nam và Cục Thống kê.
+    </p>
+
+    <!-- Data Storytelling Dynamic Cards -->
+    <div class="numbers-story-container">
+      <!-- Màn hình 1: BHYT -->
+      <div class="dynamic-frame story-card-large">
+        <div class="story-question">
+          Bạn nghĩ Việt Nam có bao nhiêu người đang được bảo vệ bởi BHYT?
+        </div>
+        <div class="story-counter-giant" id="count-bhyt">
+          0+
+        </div>
+        <div class="story-caption">
+          Năm 2024, toàn quốc ghi nhận <strong>95,523 triệu người tham gia BHYT</strong>, đạt tỷ lệ bao phủ <strong>khoảng 94,2% dân số</strong> (trên tổng số 101,11 triệu dân theo Cục Thống kê). Từ trẻ sơ sinh, học sinh sinh viên đến cụ già 80 tuổi đều có tấm lá chắn y tế chở che trước rủi ro ốm đau bệnh tật.
+        </div>
+        <div style="margin-top: 14px;">
+          <a href="https://baohiemxahoi.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Xem nguồn: Bảo hiểm Xã hội Việt Nam (2024) ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Màn hình 2: BHXH -->
+      <div class="dynamic-frame story-card-large">
+        <div class="story-question">
+          Còn lực lượng lao động được bảo vệ bởi BHXH?
+        </div>
+        <div class="story-counter-giant" id="count-bhxh" style="color: var(--color-primary);">
+          0+
+        </div>
+        <div class="story-caption">
+          Năm 2024 đạt khoảng <strong>20,11 triệu người tham gia BHXH</strong>, chiếm khoảng <strong>42,71% lực lượng lao động trong độ tuổi</strong> (Bảo hiểm Xã hội Việt Nam). Mỗi người lao động đều có điểm tựa vững vàng khi ốm đau, thai sản, tai nạn lao động và tự chủ lương hưu khi về già.
+        </div>
+        <div style="margin-top: 14px;">
+          <a href="https://baohiemxahoi.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Xem nguồn: Bảo hiểm Xã hội Việt Nam (2024) ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Màn hình 3: Hỗ trợ người nghèo -->
+      <div class="dynamic-frame story-card-large">
+        <div class="story-question">
+          Còn những gia đình khó khăn, yếu thế trong xã hội?
+        </div>
+        
+        <div style="width: 100%; max-width: 680px; height: 320px; border-radius: 18px; overflow: hidden; margin: 16px 0; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+          <!-- Authentic Vietnam rural elderly & family -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Old_Vietnamese_Woman.jpg" 
+               alt="Cụ già và người cao tuổi nông thôn Việt Nam được bảo trợ xã hội và cấp thẻ BHYT" 
+               style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+
+        <div class="story-caption">
+          Theo chuẩn nghèo đa chiều giai đoạn 2022-2025 quy định tại Nghị định số 07/2021/NĐ-CP của Chính phủ, Nhà nước triển khai Chương trình mục tiêu quốc gia giảm nghèo bền vững: cấp thẻ BHYT miễn phí, hỗ trợ tiền điện, vốn vay ưu đãi sản xuất và xây dựng hàng vạn ngôi nhà Đại đoàn kết, tạo bệ đỡ để người nghèo vươn lên thoát nghèo bền vững.
+        </div>
+        <div style="margin-top: 14px;">
+          <a href="https://molisa.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+            Xem nguồn: Bộ Lao động - Thương binh & Xã hội ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Cuối page: Chốt hạ Punchline Khung động -->
+      <div class="dynamic-frame punchline-box">
+        <div class="punchline-sub">
+          ĐẰNG SAU NHỮNG CON SỐ...
+        </div>
+        <div class="punchline-main">
+          CON NGƯỜI.
+        </div>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 680px; margin: 20px auto 0; line-height: 1.65;">
+          An sinh xã hội không đơn thuần là số liệu thống kê khô khan trên giấy tờ, mà là nụ cười hạnh phúc của cụ già khi cầm thẻ BHYT và sổ lương hưu, là sự an tâm của người cha khi con được tiêm chủng miễn phí, là niềm tin son sắt của nhân dân vào sự nghiệp xây dựng đất nước phồn vinh, công bằng và văn minh.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Dự án thực hiện bởi: <strong>Tổ 2 - Lớp 12D6 - THPT Đông Anh</strong> | Liên hệ: <strong>012345678</strong> | Địa chỉ: <strong>Đông Anh, Hà Nội.</strong>
+      <div style="font-size: 0.725rem; color: var(--color-accent); margin-top: 6px;">
+        Nguồn dữ liệu được truy cập và cập nhật: Tháng 10/2026 (theo các văn bản pháp luật và niên giám thống kê chính thức của Nhà nước Việt Nam).
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/numbers.js"></script>
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>

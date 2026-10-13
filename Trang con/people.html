@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ai Đang Được Bảo Vệ? | An Sinh 360 - Việt Nam</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    const savedTheme = localStorage.getItem('as360_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <!-- Aurora Background (Dịu Mắt) -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-3"></div>
+    <div class="aurora-blob aurora-4"></div>
+    <div class="aurora-blob aurora-1"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="../index.html" class="nav-brand">
+        <span>AN SINH 360</span>
+        <span class="nav-brand-tag">GDKT&PL 12</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="map.html" class="nav-link">Bản đồ</a></li>
+        <li><a href="numbers.html" class="nav-link">Con số</a></li>
+        <li><a href="lan.html" class="nav-link">Lan</a></li>
+        <li><a href="people.html" class="nav-link active">Đối tượng</a></li>
+        <li><a href="fairness.html" class="nav-link">Công bằng</a></li>
+        <li><a href="game.html" class="nav-link">Mô phỏng</a></li>
+        <li><a href="sources.html" class="nav-link">Nguồn</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">☀️</button>
+        <button class="mobile-toggle-btn" aria-label="Mở menu điều hướng">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="map.html" class="nav-link">Bản đồ</a>
+      <a href="numbers.html" class="nav-link">Con số</a>
+      <a href="lan.html" class="nav-link">Lan</a>
+      <a href="people.html" class="nav-link active">Đối tượng</a>
+      <a href="fairness.html" class="nav-link">Công bằng</a>
+      <a href="game.html" class="nav-link">Mô phỏng</a>
+      <a href="sources.html" class="nav-link">Nguồn</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="back-btn-container">
+      <button class="back-button" onclick="goBack()" aria-label="Quay lại trang trước">
+        ← Quay lại
+      </button>
+    </div>
+
+    <div class="section-badge">Section 4: Đối Tượng Thụ Hưởng</div>
+    <h1 class="section-title">AI ĐANG ĐƯỢC BẢO VỆ DƯỚI MÁI NHÀ AN SINH?</h1>
+    <p class="section-subtitle">
+      Chính sách an sinh xã hội Việt Nam được thiết kế bao phủ toàn diện từ mầm non đất nước đến tuổi vàng an nhiên. Bấm vào từng khung động bên dưới để khám phá chi tiết các chế độ bảo trợ của Nhà nước được quy định trong các văn bản pháp luật hiện hành.
+    </p>
+
+    <!-- Floating Dynamic Cards Grid -->
+    <div class="people-cards-grid">
+      <!-- 1. Trẻ em -->
+      <div class="dynamic-frame people-avatar-card" data-id="children">
+        <div>
+          <div class="people-emoji-badge">👶</div>
+          <div class="people-tag">Mầm Non Đất Nước</div>
+          <h3 class="people-name">Trẻ Em Dưới 6 Tuổi</h3>
+        </div>
+        <div class="people-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Schoolchildren_Nam_Yen_Quang_Nam.jpg" alt="Trẻ em học sinh tiểu học tại Việt Nam" />
+        </div>
+        <div style="font-size: 0.8rem; color: var(--color-accent); font-weight: 800; display: flex; justify-content: space-between; align-items: center;">
+          <span>Xem 4 chính sách bảo vệ</span>
+          <span>➔</span>
+        </div>
+      </div>
+
+      <!-- 2. Nông dân -->
+      <div class="dynamic-frame people-avatar-card" data-id="farmer">
+        <div>
+          <div class="people-emoji-badge">👨‍🌾</div>
+          <div class="people-tag">Bệ Đỡ Tam Nông</div>
+          <h3 class="people-name">Nông Dân & Ngư Dân</h3>
+        </div>
+        <div class="people-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Rice_Farmer_in_Hoi_An%2C_Vietnam.jpg" alt="Bác nông dân Việt Nam kiên cường trên ruộng lúa quê hương" />
+        </div>
+        <div style="font-size: 0.8rem; color: var(--color-accent); font-weight: 800; display: flex; justify-content: space-between; align-items: center;">
+          <span>Xem 4 chính sách bảo vệ</span>
+          <span>➔</span>
+        </div>
+      </div>
+
+      <!-- 3. Người lao động -->
+      <div class="dynamic-frame people-avatar-card" data-id="worker">
+        <div>
+          <div class="people-emoji-badge">👩‍💼</div>
+          <div class="people-tag">Lực Lượng Nòng Cốt</div>
+          <h3 class="people-name">Người Lao Động</h3>
+        </div>
+        <div class="people-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Mercedes-Benz-Vietnam_factory_workers_management.jpg" alt="Công nhân và người lao động tại doanh nghiệp sản xuất ở Việt Nam" />
+        </div>
+        <div style="font-size: 0.8rem; color: var(--color-accent); font-weight: 800; display: flex; justify-content: space-between; align-items: center;">
+          <span>Xem 4 chính sách bảo vệ</span>
+          <span>➔</span>
+        </div>
+      </div>
+
+      <!-- 4. Người già -->
+      <div class="dynamic-frame people-avatar-card" data-id="elderly">
+        <div>
+          <div class="people-emoji-badge">👴</div>
+          <div class="people-tag">Tuổi Vàng An Nhiên</div>
+          <h3 class="people-name">Người Cao Tuổi</h3>
+        </div>
+        <div class="people-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Old_Vietnamese_Woman.jpg" alt="Cụ bà người Việt Nam với nụ cười phúc hậu và nón lá truyền thống" />
+        </div>
+        <div style="font-size: 0.8rem; color: var(--color-accent); font-weight: 800; display: flex; justify-content: space-between; align-items: center;">
+          <span>Xem 4 chính sách bảo vệ</span>
+          <span>➔</span>
+        </div>
+      </div>
+
+      <!-- 5. Người khuyết tật -->
+      <div class="dynamic-frame people-avatar-card" data-id="disabled">
+        <div>
+          <div class="people-emoji-badge">♿</div>
+          <div class="people-tag">Hòa Nhập Toàn Diện</div>
+          <h3 class="people-name">Người Khuyết Tật</h3>
+        </div>
+        <div class="people-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/USAID_assists_persons_with_disabilities_in_Vietnam_%285070814699%29.jpg" alt="Người khuyết tật Việt Nam được hỗ trợ hòa nhập cộng đồng" />
+        </div>
+        <div style="font-size: 0.8rem; color: var(--color-accent); font-weight: 800; display: flex; justify-content: space-between; align-items: center;">
+          <span>Xem 4 chính sách bảo vệ</span>
+          <span>➔</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Beneficiary Detail Modal (Khung Động) -->
+  <div class="modal-backdrop" id="people-modal" role="dialog" aria-modal="true">
+    <div class="dynamic-frame modal-dialog">
+      <button class="modal-close-btn" onclick="closeModal('people-modal')" aria-label="Đóng popup">✕</button>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <span id="modal-emoji" style="font-size: 2.4rem;">👴</span>
+        <div>
+          <div id="modal-tag" style="font-size: 0.725rem; font-weight: 800; text-transform: uppercase; color: var(--color-accent);"></div>
+          <h2 id="modal-name" style="font-size: 1.4rem; font-weight: 900; color: var(--text-primary); margin: 0;"></h2>
+        </div>
+      </div>
+
+      <!-- Authentic Vietnam Image -->
+      <div style="width: 100%; height: 210px; border-radius: 16px; overflow: hidden; margin-bottom: 16px; border: 1px solid var(--glass-border);">
+        <img id="modal-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+
+      <h3 id="modal-title" style="font-size: 0.95rem; font-weight: 800; color: var(--color-secondary); margin-bottom: 12px;"></h3>
+
+      <div id="modal-benefits"></div>
+
+      <div id="modal-quote" style="margin-top: 18px; padding: 12px; border-radius: 12px; background: rgba(45, 122, 103, 0.12); border: 1px solid var(--color-primary); font-size: 0.85rem; font-style: italic; color: var(--color-accent); text-align: center;"></div>
+
+      <div style="margin-top: 16px; text-align: center;">
+        <a id="modal-source-btn" href="https://molisa.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+          Xem văn bản chính sách chính thức ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Dự án thực hiện bởi: <strong>Tổ 2 - Lớp 12D6 - THPT Đông Anh</strong> | Liên hệ: <strong>012345678</strong> | Địa chỉ: <strong>Đông Anh, Hà Nội.</strong>
+      <div style="font-size: 0.725rem; color: var(--color-accent); margin-top: 6px;">
+        Nguồn dữ liệu được truy cập và cập nhật: Tháng 10/2026 (theo các văn bản pháp luật và niên giám thống kê chính thức của Nhà nước Việt Nam).
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/people.js"></script>
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>

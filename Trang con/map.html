@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bản Đồ Dữ Liệu An Sinh | An Sinh 360 - Việt Nam</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    const savedTheme = localStorage.getItem('as360_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <!-- Aurora Background (Dịu Mắt) -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="../index.html" class="nav-brand">
+        <span>AN SINH 360</span>
+        <span class="nav-brand-tag">GDKT&PL 12</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="map.html" class="nav-link active">Bản đồ</a></li>
+        <li><a href="numbers.html" class="nav-link">Con số</a></li>
+        <li><a href="lan.html" class="nav-link">Lan</a></li>
+        <li><a href="people.html" class="nav-link">Đối tượng</a></li>
+        <li><a href="fairness.html" class="nav-link">Công bằng</a></li>
+        <li><a href="game.html" class="nav-link">Mô phỏng</a></li>
+        <li><a href="sources.html" class="nav-link">Nguồn</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">☀️</button>
+        <button class="mobile-toggle-btn" aria-label="Mở menu điều hướng">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="map.html" class="nav-link active">Bản đồ</a>
+      <a href="numbers.html" class="nav-link">Con số</a>
+      <a href="lan.html" class="nav-link">Lan</a>
+      <a href="people.html" class="nav-link">Đối tượng</a>
+      <a href="fairness.html" class="nav-link">Công bằng</a>
+      <a href="game.html" class="nav-link">Mô phỏng</a>
+      <a href="sources.html" class="nav-link">Nguồn</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="back-btn-container">
+      <button class="back-button" onclick="goBack()" aria-label="Quay lại trang trước">
+        ← Quay lại
+      </button>
+    </div>
+
+    <div class="section-badge">Section 1: Bản Đồ Chuẩn & Số Liệu Chính Thức</div>
+    <h1 class="section-title">BẢN ĐỒ DỮ LIỆU AN SINH VIỆT NAM</h1>
+    <p class="section-subtitle">
+      Bản đồ hành chính chuẩn mực của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam, khẳng định chủ quyền lãnh thổ trọn vẹn bao gồm Quần đảo Hoàng Sa và Quần đảo Trường Sa. Áp dụng hệ thống <strong>34 đơn vị hành chính cấp tỉnh</strong> (28 tỉnh và 6 thành phố trực thuộc Trung ương) theo Nghị quyết số 202/2025/QH15 và Quyết định số 19/2025/QĐ-TTg từ ngày 01/07/2025.
+    </p>
+
+    <!-- Map & Timeline Grid -->
+    <div class="map-layout-grid">
+      <!-- Left: Official Map & Interactive Radar Pins -->
+      <div class="dynamic-frame map-container-card">
+        <div style="font-size: 0.8rem; font-weight: 800; color: var(--color-accent); margin-bottom: 12px; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary); box-shadow: 0 0 8px var(--color-primary);"></span>
+          Hệ Thống Hành Chính 34 Đơn Vị Cấp Tỉnh (Từ 01/07/2025)
+        </div>
+
+        <div class="vietnam-svg-wrapper">
+          <!-- Official Administrative Map Vector SVG -->
+          <img src="../assets/vietnam_map.svg" alt="Bản đồ hành chính Việt Nam chuẩn có Hoàng Sa và Trường Sa" class="official-map-img" />
+
+          <!-- Dynamic Radar Pins Layer -->
+          <div class="map-pins-layer">
+            <!-- 1. Thủ đô Hà Nội -->
+            <div class="map-pin active" style="top: 18.6%; left: 47.7%;" data-id="hanoi" data-name="Thủ đô Hà Nội">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">★ Hà Nội</span>
+            </div>
+
+            <!-- 2. Hải Phòng -->
+            <div class="map-pin" style="top: 20.2%; left: 58.0%;" data-id="haiphong" data-name="TP. Hải Phòng">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">Hải Phòng</span>
+            </div>
+
+            <!-- 3. Quảng Ninh -->
+            <div class="map-pin" style="top: 17.5%; left: 63.5%;" data-id="quangninh" data-name="Tỉnh Quảng Ninh">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">Quảng Ninh</span>
+            </div>
+
+            <!-- 4. Nghệ An -->
+            <div class="map-pin" style="top: 33.3%; left: 45.7%;" data-id="nghean" data-name="Tỉnh Nghệ An">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">Nghệ An</span>
+            </div>
+
+            <!-- 5. Đà Nẵng -->
+            <div class="map-pin" style="top: 49.7%; left: 75.3%;" data-id="danang" data-name="TP. Đà Nẵng">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">Đà Nẵng</span>
+            </div>
+
+            <!-- 6. Quần đảo Hoàng Sa (TP. Đà Nẵng) -->
+            <div class="map-pin pin-left" style="top: 54.7%; left: 91.5%;" data-id="hoangsa" data-name="Quần đảo Hoàng Sa (TP. Đà Nẵng)">
+              <div class="map-pin-dot" style="background: var(--color-accent);"><div class="map-pin-radar" style="border-color: var(--color-accent);"></div></div>
+              <span class="map-pin-label island-highlight-tag">⭐ QĐ. Hoàng Sa</span>
+            </div>
+
+            <!-- 7. Đắk Lắk (Tây Nguyên) -->
+            <div class="map-pin" style="top: 70.8%; left: 73.4%;" data-id="daklak" data-name="Tỉnh Đắk Lắk">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">Đắk Lắk</span>
+            </div>
+
+            <!-- 8. Khánh Hòa -->
+            <div class="map-pin pin-left" style="top: 73.5%; left: 87.0%;" data-id="khanhhoa" data-name="Tỉnh Khánh Hòa">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">Khánh Hòa</span>
+            </div>
+
+            <!-- 9. Quần đảo Trường Sa (T. Khánh Hòa) -->
+            <div class="map-pin pin-left" style="top: 92.1%; left: 84.3%;" data-id="truongsa" data-name="Quần đảo Trường Sa (T. Khánh Hòa)">
+              <div class="map-pin-dot" style="background: var(--color-accent);"><div class="map-pin-radar" style="border-color: var(--color-accent);"></div></div>
+              <span class="map-pin-label island-highlight-tag">⭐ QĐ. Trường Sa</span>
+            </div>
+
+            <!-- 10. TP. Hồ Chí Minh -->
+            <div class="map-pin" style="top: 82.4%; left: 56.8%;" data-id="hcm" data-name="TP. Hồ Chí Minh">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">TP.HCM</span>
+            </div>
+
+            <!-- 11. Cần Thơ -->
+            <div class="map-pin" style="top: 87.2%; left: 46.4%;" data-id="cantho" data-name="TP. Cần Thơ">
+              <div class="map-pin-dot"><div class="map-pin-radar"></div></div>
+              <span class="map-pin-label">Cần Thơ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Province Status Card -->
+        <div id="province-note" class="glass-panel" style="width: 100%; margin-top: 18px; padding: 14px 18px; font-size: 0.825rem; color: var(--text-primary); border-color: rgba(200, 169, 107, 0.35); text-align: center; line-height: 1.55;">
+          <strong>Hà Nội - Thủ đô:</strong> Trung tâm chính trị, văn hóa của cả nước. Triển khai xuất sắc chính sách BHYT toàn dân, thanh toán viện phí bằng CCCD gắn chip và ứng dụng VssID.
+        </div>
+
+        <div style="font-size: 0.725rem; color: var(--text-muted); margin-top: 10px; text-align: center;">
+          * Lưu ý lịch sử: Hệ thống 63 tỉnh/thành phố là mô hình áp dụng trước ngày 01/07/2025.
+        </div>
+      </div>
+
+      <!-- Right: Timeline & Verified Real Stats Cards -->
+      <div id="timeline-container">
+        <!-- Horizontal Timeline Bar (Khung động) -->
+        <div class="dynamic-frame timeline-bar">
+          <button class="timeline-year-btn" data-year="2015">2015</button>
+          <button class="timeline-year-btn" data-year="2018">2018</button>
+          <button class="timeline-year-btn" data-year="2021">2021</button>
+          <button class="timeline-year-btn active" data-year="2024">Năm 2024 (Chính thức)</button>
+        </div>
+
+        <div style="font-size: 0.775rem; color: var(--color-accent); font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+          <span id="stat-scope-badge">Phạm vi: Số liệu toàn quốc năm 2024</span>
+          <span>Dân số: 101.112.656 người (01/04/2024 - Cục Thống kê)</span>
+        </div>
+
+        <!-- 4 Verified Real Statistics Cards with Outbound Source Links -->
+        <div class="stats-cards-grid">
+          <!-- Card 1: BHYT -->
+          <div class="dynamic-frame stat-item-card">
+            <div>
+              <div class="stat-number" id="stat-bhyt-num">95,523 triệu</div>
+              <div class="stat-label">Số người tham gia BHYT</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 700; margin-bottom: 4px;" id="stat-bhyt-sub">
+                Tỷ lệ bao phủ: khoảng 94,2% dân số
+              </div>
+              <div class="stat-source">Nguồn: Bảo hiểm Xã hội Việt Nam (2024)</div>
+              <a href="https://baohiemxahoi.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+                Xem nguồn BHXH Việt Nam ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: BHXH -->
+          <div class="dynamic-frame stat-item-card">
+            <div>
+              <div class="stat-number" id="stat-bhxh-num">20,11 triệu</div>
+              <div class="stat-label">Số người tham gia BHXH</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 700; margin-bottom: 4px;" id="stat-bhxh-sub">
+                Khoảng 42,71% lực lượng lao động trong độ tuổi
+              </div>
+              <div class="stat-source">Nguồn: Bảo hiểm Xã hội Việt Nam (2024)</div>
+              <a href="https://baohiemxahoi.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+                Xem nguồn BHXH Việt Nam ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: BHTN -->
+          <div class="dynamic-frame stat-item-card">
+            <div>
+              <div class="stat-number" id="stat-bhtn-num">16,093 triệu</div>
+              <div class="stat-label">Tham gia BHTN (Thất nghiệp)</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 700; margin-bottom: 4px;" id="stat-bhtn-sub">
+                Khoảng 34,18% lực lượng lao động trong độ tuổi
+              </div>
+              <div class="stat-source">Nguồn: Bảo hiểm Xã hội Việt Nam (2024)</div>
+              <a href="https://baohiemxahoi.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+                Xem nguồn BHXH Việt Nam ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Thất nghiệp -->
+          <div class="dynamic-frame stat-item-card">
+            <div>
+              <div class="stat-number" id="stat-thatnghiep-num">2,24%</div>
+              <div class="stat-label">Tỷ lệ thất nghiệp</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--color-secondary); font-weight: 700; margin-bottom: 4px;" id="stat-thatnghiep-sub">
+                Lực lượng LĐ: khoảng 53,0 triệu người
+              </div>
+              <div class="stat-source">Nguồn: Cục Thống kê (Tổng cục Thống kê)</div>
+              <a href="https://www.gso.gov.vn" target="_blank" rel="noopener" class="source-badge-link">
+                Xem nguồn Cục Thống kê ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Authentic Vietnam Context Photo -->
+        <div class="dynamic-frame stats-hero-img-box">
+          <img id="stat-hero-img" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Old_Vietnamese_Woman.jpg" alt="Cụ bà người Việt Nam với nụ cười phúc hậu an tâm thụ hưởng chính sách an sinh" />
+          <div class="stats-hero-img-caption" id="stat-hero-caption">
+            Năm 2024: Số liệu toàn quốc ghi nhận 95,523 triệu người tham gia BHYT (đạt 94,2% dân số) và 20,11 triệu người tham gia BHXH (Bảo hiểm Xã hội Việt Nam).
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Dự án thực hiện bởi: <strong>Tổ 2 - Lớp 12D6 - THPT Đông Anh</strong> | Liên hệ: <strong>012345678</strong> | Địa chỉ: <strong>Đông Anh, Hà Nội.</strong>
+      <div style="font-size: 0.725rem; color: var(--color-accent); margin-top: 6px;">
+        Nguồn dữ liệu được truy cập và cập nhật: Tháng 10/2026 (theo các văn bản pháp luật và niên giám thống kê chính thức của Nhà nước Việt Nam).
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/map.js"></script>
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>

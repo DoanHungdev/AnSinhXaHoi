@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An Sinh 360 - Việt Nam | Môn GDKT&PL 12</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Khởi tạo theme sớm để tránh chớp màn hình
+    const savedTheme = localStorage.getItem('as360_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <!-- Aurora Background -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+  </div>
+
+  <!-- Minimal Header for Home -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="index.html" class="nav-brand">
+        <span>AN SINH 360</span>
+        <span class="nav-brand-tag">GDKT&PL 12</span>
+      </a>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Content (Tối giản theo yêu cầu mục 0) -->
+  <main class="hero-wrapper">
+    <div class="hero-glow-sphere" aria-hidden="true"></div>
+
+    <h1 class="hero-title">
+      <span class="hero-title-top">AN SINH 360</span>
+      <span class="hero-title-bottom">VIỆT NAM</span>
+    </h1>
+
+    <a href="Trang con/map.html" class="hero-heart-btn" id="explore-btn" aria-label="Khám phá An Sinh 360">
+      <span class="heart-icon">❤️</span>
+      <span>Khám phá</span>
+    </a>
+
+    <div class="hero-hint">
+      Chạm trái tim để chuyển sang Bản đồ dữ liệu ➔
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mô Phỏng Ra Quyết Định | An Sinh 360 - Việt Nam</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+    const savedTheme = localStorage.getItem('as360_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+  <!-- Aurora Background -->
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-4"></div>
+    <div class="aurora-blob aurora-2"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="../index.html" class="nav-brand">
+        <span>AN SINH 360</span>
+        <span class="nav-brand-tag">GDKT&PL 12</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="map.html" class="nav-link">Bản đồ</a></li>
+        <li><a href="numbers.html" class="nav-link">Con số</a></li>
+        <li><a href="lan.html" class="nav-link">Lan</a></li>
+        <li><a href="people.html" class="nav-link">Đối tượng</a></li>
+        <li><a href="fairness.html" class="nav-link">Công bằng</a></li>
+        <li><a href="game.html" class="nav-link active">Mô phỏng</a></li>
+        <li><a href="sources.html" class="nav-link">Nguồn</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">☀️</button>
+        <button class="mobile-toggle-btn" aria-label="Mở menu điều hướng">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="map.html" class="nav-link">Bản đồ</a>
+      <a href="numbers.html" class="nav-link">Con số</a>
+      <a href="lan.html" class="nav-link">Lan</a>
+      <a href="people.html" class="nav-link">Đối tượng</a>
+      <a href="fairness.html" class="nav-link">Công bằng</a>
+      <a href="game.html" class="nav-link active">Mô phỏng</a>
+      <a href="sources.html" class="nav-link">Nguồn</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="back-btn-container">
+      <button class="back-button" onclick="goBack()" aria-label="Quay lại trang trước">
+        ← Quay lại
+      </button>
+    </div>
+
+    <div class="section-badge">Section 6: Mini Game Tương Tác</div>
+    <h1 class="section-title">BẠN LÀ NGƯỜI RA QUYẾT ĐỊNH AN SINH</h1>
+    <p class="section-subtitle">
+      Hóa thân thành nhà hoạch định chính sách quốc gia: Bạn nắm trong tay 100 điểm ngân sách an sinh. Hãy cân đối nguồn lực vào 5 lĩnh vực thiết yếu và kiểm tra năng lực ứng phó trước thiên tai khôn lường!
+    </p>
+
+    <!-- Game Dashboard -->
+    <div class="game-dashboard">
+      <!-- Meter Card (Khung Động) -->
+      <div class="dynamic-frame budget-meter-card">
+        <div style="flex: 1;">
+          <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--accent-cyan); letter-spacing: 0.08em; margin-bottom: 4px;">
+            Tổng Ngân Sách Quốc Gia Phân Bổ
+          </div>
+          <h2 style="font-size: 1.25rem; font-weight: 900;">Kỷ Luật Tài Khóa An Sinh</h2>
+          <div id="budget-status-text" style="font-size: 0.825rem; font-weight: 700; margin-top: 6px; color: var(--color-success);">
+            ✅ Đã phân bổ 100 / 100 điểm (Hợp lệ, sẵn sàng mô phỏng)
+          </div>
+        </div>
+
+        <div style="text-align: right;">
+          <div class="budget-score" id="budget-total">
+            100 / 100
+          </div>
+          <button type="button" id="auto-balance-btn" class="glass-btn" style="padding: 6px 14px; font-size: 0.75rem; border-radius: 999px; margin-top: 6px; background: rgba(255,255,255,0.08);">
+            ⚡ Tự động cân đối 100 điểm
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Preset Suggestions -->
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; justify-content: center;">
+        <button type="button" class="glass-btn preset-btn" data-preset="balanced" style="font-size: 0.75rem; padding: 6px 14px; border-radius: 999px;">
+          ⚖️ Cân Bằng (20-20-20-20-20)
+        </button>
+        <button type="button" class="glass-btn preset-btn" data-preset="health" style="font-size: 0.75rem; padding: 6px 14px; border-radius: 999px;">
+          🏥 Ưu Tiên Y Tế & Trẻ Em
+        </button>
+        <button type="button" class="glass-btn preset-btn" data-preset="growth" style="font-size: 0.75rem; padding: 6px 14px; border-radius: 999px;">
+          💼 Việc Làm & Giảm Nghèo
+        </button>
+      </div>
+
+      <!-- 5 Sliders Grid (Khung Động) -->
+      <div class="game-sliders-grid">
+        <!-- 1. Y tế -->
+        <div class="dynamic-frame game-slider-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-weight: 800; font-size: 1rem;">🏥 Y Tế Toàn Dân</span>
+            <span id="val-yte" style="font-weight: 900; color: var(--accent-cyan); font-size: 1.2rem;">25</span>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px;">
+            Cấp thẻ BHYT, trang bị máy móc y tế cơ sở, viện phí.
+          </div>
+          <input type="range" min="0" max="50" value="25" class="slider-input" id="slider-yte" aria-label="Ngân sách Y tế" />
+        </div>
+
+        <!-- 2. Việc làm -->
+        <div class="dynamic-frame game-slider-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-weight: 800; font-size: 1rem;">💼 Hỗ Trợ Việc Làm</span>
+            <span id="val-vieclam" style="font-weight: 900; color: var(--accent-indigo); font-size: 1.2rem;">20</span>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px;">
+            Trợ cấp thất nghiệp, đào tạo nghề, kết nối doanh nghiệp.
+          </div>
+          <input type="range" min="0" max="50" value="20" class="slider-input" id="slider-vieclam" aria-label="Ngân sách Việc làm" />
+        </div>
+
+        <!-- 3. Giảm nghèo -->
+        <div class="dynamic-frame game-slider-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-weight: 800; font-size: 1rem;">🌾 Giảm Nghèo Bền Vững</span>
+            <span id="val-giamngheo" style="font-weight: 900; color: var(--accent-teal); font-size: 1.2rem;">20</span>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px;">
+            Vay vốn 0%, hỗ trợ cây giống vật nuôi, nhà đại đoàn kết.
+          </div>
+          <input type="range" min="0" max="50" value="20" class="slider-input" id="slider-giamngheo" aria-label="Ngân sách Giảm nghèo" />
+        </div>
+
+        <!-- 4. Người già -->
+        <div class="dynamic-frame game-slider-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-weight: 800; font-size: 1rem;">👴 Người Cao Tuổi</span>
+            <span id="val-nguoigia" style="font-weight: 900; color: var(--accent-amber); font-size: 1.2rem;">20</span>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px;">
+            Trợ cấp xã hội hàng tháng (Nghị định 76/2024), chăm sóc y tế.
+          </div>
+          <input type="range" min="0" max="50" value="20" class="slider-input" id="slider-nguoigia" aria-label="Ngân sách Người già" />
+        </div>
+
+        <!-- 5. Trẻ em -->
+        <div class="dynamic-frame game-slider-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-weight: 800; font-size: 1rem;">👶 Chăm Sóc Trẻ Em</span>
+            <span id="val-treem" style="font-weight: 900; color: var(--accent-emerald); font-size: 1.2rem;">15</span>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px;">
+            Tiêm chủng miễn phí, dinh dưỡng học đường, miễn học phí.
+          </div>
+          <input type="range" min="0" max="50" value="15" class="slider-input" id="slider-treem" aria-label="Ngân sách Trẻ em" />
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div style="text-align: center; margin: 10px 0 20px;">
+        <button class="glass-btn btn-primary" id="start-sim-btn" style="padding: 16px 44px; font-size: 1.1rem; border-radius: 999px;">
+          ⚡ Bắt Đầu Mô Phỏng Vận Hành
+        </button>
+      </div>
+
+      <!-- Results Section (Khung Động) -->
+      <div id="normal-result-section" class="dynamic-frame" style="display: none; padding: 32px; border-color: rgba(20, 184, 166, 0.4);">
+        <div id="result-badge" class="section-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3);">
+          Kết Quả Vận Hành 1 Năm Bình Yên
+        </div>
+        <h2 id="result-title" class="section-title" style="font-size: 1.6rem; margin-bottom: 16px;">
+          ĐÁNH GIÁ CHỈ SỐ PHÁT TRIỂN XÃ HỘI
+        </h2>
+
+        <!-- Alert note if disaster happened and was recovered -->
+        <div id="result-disaster-alert" style="display: none; padding: 14px 18px; border-radius: 12px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); margin-bottom: 20px; font-size: 0.875rem; color: #fca5a5;">
+          <strong>🛡️ Phục hồi khẩn cấp:</strong> Đã phân bổ thành công <strong>30 điểm Quỹ dự phòng an sinh</strong> (Y tế khẩn cấp: +<span id="disaster-res-yte">15</span> điểm | Cứu trợ giảm nghèo: +<span id="disaster-res-giamngheo">15</span> điểm) giúp đất nước đứng vững sau bão!
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 24px;">
+          <!-- 1. Y tế -->
+          <div class="result-metric-card" id="card-result-yte">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Chỉ Số Sức Khỏe</div>
+              <div style="font-weight: 800; font-size: 1.05rem;">Bao Phủ Y Tế</div>
+              <div id="desc-result-yte" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">95% dân số có BHYT</div>
+            </div>
+            <div id="val-result-yte" class="arrow-up">↑ 95%</div>
+          </div>
+
+          <!-- 2. Thất nghiệp -->
+          <div class="result-metric-card" id="card-result-vieclam">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Tỷ Lệ Lao Động</div>
+              <div style="font-weight: 800; font-size: 1.05rem;">Thất Nghiệp</div>
+              <div id="desc-result-vieclam" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Thị trường ổn định</div>
+            </div>
+            <div id="val-result-vieclam" class="arrow-down">↓ 2,1%</div>
+          </div>
+
+          <!-- 3. Giảm nghèo -->
+          <div class="result-metric-card" id="card-result-giamngheo">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Xóa Đói Giảm Nghèo</div>
+              <div style="font-weight: 800; font-size: 1.05rem;">Hộ Thoát Nghèo</div>
+              <div id="desc-result-giamngheo" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Tín dụng chính sách</div>
+            </div>
+            <div id="val-result-giamngheo" class="arrow-up">↑ 92%</div>
+          </div>
+
+          <!-- 4. Người già -->
+          <div class="result-metric-card" id="card-result-nguoigia">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Hạnh Phúc Tuổi Già</div>
+              <div style="font-weight: 800; font-size: 1.05rem;">Trợ Cấp Người Già</div>
+              <div id="desc-result-nguoigia" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Trợ cấp 500k & BHYT</div>
+            </div>
+            <div id="val-result-nguoigia" class="arrow-up">↑ 89%</div>
+          </div>
+
+          <!-- 5. Trẻ em -->
+          <div class="result-metric-card" id="card-result-treem">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Thế Hệ Tương Lai</div>
+              <div style="font-weight: 800; font-size: 1.05rem;">Quyền Trẻ Em</div>
+              <div id="desc-result-treem" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">Tiêm chủng & học đường</div>
+            </div>
+            <div id="val-result-treem" class="arrow-up">↑ 96%</div>
+          </div>
+        </div>
+
+        <div id="res-commentary" style="background: rgba(255,255,255,0.05); border-radius: 14px; padding: 18px; font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
+          <strong>Đúc kết bài học (GDKT&PL 12):</strong> Ngân sách an sinh xã hội được phân bổ cân bằng và khoa học giúp nền kinh tế vận hành hài hòa: Nâng cao chất lượng nguồn nhân lực, giữ vững trật tự an toàn xã hội và tạo bệ phóng phát triển kinh tế bền vững!
+        </div>
+
+        <div style="margin-top: 16px; text-align: center;">
+          <a href="sources.html" class="source-badge-link">
+            Xem cơ sở dữ liệu & Văn bản pháp luật chi tiết ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Random Disaster Alert Modal -->
+  <div class="modal-backdrop" id="disaster-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog disaster-alert-modal">
+      <div style="font-size: 3.5rem; margin-bottom: 12px;">🚨</div>
+      <h2 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">
+        CẢNH BÁO: SIÊU BÃO CÀN QUÉT!
+      </h2>
+      <p style="font-size: 0.95rem; margin-bottom: 20px; opacity: 0.95; line-height: 1.5;">
+        Cơn bão lịch sử đổ bộ làm sập đổ nhiều trạm y tế và cuốn trôi mùa màng của hàng nghìn hộ nông dân!
+        <br />
+        <strong>Ngân sách Y tế = 0 | Ngân sách Giảm nghèo = 0</strong>
+      </p>
+
+      <!-- Quỹ dự phòng 30 điểm -->
+      <div style="background: rgba(0, 0, 0, 0.35); border-radius: 20px; padding: 22px; margin-bottom: 24px; text-align: left;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <span style="font-weight: 800; font-size: 1.1rem; color: #fde047;">🛡️ KÍCH HOẠT QUỸ DỰ PHÒNG KHẨN CẤP</span>
+          <span id="res-total" style="font-weight: 900; font-size: 1.2rem; color: #ffffff;">30 / 30 điểm</span>
+        </div>
+
+        <!-- Reserve Y tế -->
+        <div style="margin-bottom: 14px;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; margin-bottom: 4px;">
+            <span>Y tế khẩn cấp:</span>
+            <span id="res-val-yte">15</span>
+          </div>
+          <input type="range" min="5" max="25" value="15" class="slider-input" id="res-slider-yte" aria-label="Quỹ Y tế khẩn cấp" />
+        </div>
+
+        <!-- Reserve Giảm nghèo -->
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; margin-bottom: 4px;">
+            <span>Cứu trợ giảm nghèo bão lũ:</span>
+            <span id="res-val-giamngheo">15</span>
+          </div>
+          <input type="range" min="5" max="25" value="15" class="slider-input" id="res-slider-giamngheo" aria-label="Quỹ Cứu trợ giảm nghèo" />
+        </div>
+      </div>
+
+      <button class="glass-btn" id="confirm-reserve-btn" style="background: #ffffff; color: #ef4444; font-weight: 900; padding: 14px 36px; border-radius: 999px; font-size: 1rem;">
+        Phân Bổ Lại Quỹ Dự Phòng & Cứu Trợ
+      </button>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Dự án thực hiện bởi: <strong>Tổ 2 - Lớp 12D6 - THPT Đông Anh</strong> | Liên hệ: <strong>012345678</strong> | Địa chỉ: <strong>Đông Anh, Hà Nội.</strong>
+      <div style="font-size: 0.725rem; color: var(--color-accent); margin-top: 6px;">
+        Nguồn dữ liệu được truy cập và cập nhật: Tháng 10/2026 (theo các văn bản pháp luật và niên giám thống kê chính thức của Nhà nước Việt Nam).
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/game.js"></script>
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>
